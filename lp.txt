@@ -1,0 +1,128 @@
+1-.
+
+#!/usr/bin/perl
+# your code goes here
+
+use strict;
+use warnings;
+use 5.010
+
+
+sub init{
+   
+    my $contador;
+
+    sub incrementar {
+        $contador++;
+    }
+   
+
+}
+
+
+2-.
+
+(defvar regular 5)
+(print regular)
+(setq regular 6)
+(print regular)
+
+(defvar tmp 2)
+(print tmp)
+(defvar tmp 8)
+(print tmp)
+
+
+3-.
+
+function fun1(var num1)
+{
+var dentro;
+	function fun2(var num2){
+		num2 = num2 + 2;
+		dentro = num2;
+		console.log(dentro);
+	}
+	
+
+	function fun3(var num3){
+		dentro = num3 + 10;
+		console.log(dentro);
+	}
+
+dentro =  50;
+console.log(dentro);
+
+}
+
+
+4-.
+
+def fun2(num2):
+		num2 = num2 + 2
+		dentro = num2
+		print "valor de dentro en fun1 ", dentro
+		
+
+
+def fun3(num3):
+		dentro = num3 + 10
+		print " valor de dentro en fun2" , dentro
+
+
+def fun1(num1):
+	dentro = 0
+	fun2(dentro)
+	fun3(dentro)
+
+	dentro =  50
+	print "valor dentro fuera de las subfunciones" , dentro
+
+fun1(5)
+
+5-.
+
+
+	C: 	"error: 'x' undeclared" El valor X en la primera linea no es reconocido como variable y la determina como indefinida regresando asi un error al momento de compilar 
+	C++: 	"error: 'x' was not declared in this scope" El valor X en la primera linea no es reconocido como variable y la determina como indefinida regresando asi un error al momento de compilar 
+	Java: 	"cannot find symbol" El valor X en la primera linea no es reconocido por no haber sido declarada antes con un tipo (int, char, etc) por lo cual me retorna error al trtar de usar una variable que no es definida
+
+6 -.
+
+----C# y c++
+
+int j = 0;
+for(int i  = 0; i < 5; i++){
+	int prueba;
+	j = i;
+	prueba = j;
+}
+
+cout<< prueba;
+cout<< j;
+
+---java---
+
+int j = 0;
+for(int i  = 0; i < 5; i++){
+	int prueba;
+	j = i;
+	prueba = j;
+}
+
+system.out.printf(prueba);
+system.out.printf(j);
+
+7-.
+
+Hello world!
+terminate called after throwing an instance of 'std::bad_alloc'
+  what():  std::bad_alloc
+
+std::bad_alloc indica que nos quedamos sin memoria
+
+This application has requested the Runtime to terminate it in an unusual way.
+Please contact the application's support team for more information.
+
+Process returned 3 (0x3)   execution time : 5.309 s
+Press any key to continue.
