@@ -13,6 +13,7 @@ sub init{
     my $contador;
 
     sub incrementar {
+	$local
         $contador++;
     }
    
@@ -35,25 +36,32 @@ sub init{
 
 3-.
 
-function fun1(var num1)
-{
-var dentro;
-	function fun2(var num2){
-		num2 = num2 + 2;
-		dentro = num2;
-		console.log(dentro);
-	}
-	
-
-	function fun3(var num3){
-		dentro = num3 + 10;
-		console.log(dentro);
-	}
-
-dentro =  50;
-console.log(dentro);
-
+function fun2(num2){
+		var dentro = num2 + 2;
+		console.log ("valor de dentro en fun2 ", dentro);
+		fun3(dentro);
 }
+
+
+function fun3(num3){
+		var dentro = num3 + 10;
+		console.log ("valor de dentro en fun3" , dentro);
+}
+
+
+function fun1(num1){
+	var dentro = 0;
+	dentro = num1;
+	fun2(dentro);
+	dentro =  50;
+	console.log("valor dentro fuera de las subfunciones" , dentro);
+}
+
+fun1(5);
+
+"valor de dentro en fun2 " 7
+"valor de dentro en fun3" 17
+"valor dentro fuera de las subfunciones" 50
 
 
 4-.
@@ -61,24 +69,28 @@ console.log(dentro);
 def fun2(num2):
 		num2 = num2 + 2
 		dentro = num2
-		print "valor de dentro en fun1 ", dentro
-		
+		print "valor de dentro en fun2 ", dentro
+		fun3(dentro)
 
 
 def fun3(num3):
 		dentro = num3 + 10
-		print " valor de dentro en fun2" , dentro
+		print " valor de dentro en fun3" , dentro
 
 
 def fun1(num1):
 	dentro = 0
+	dentro = num1
 	fun2(dentro)
-	fun3(dentro)
-
 	dentro =  50
 	print "valor dentro fuera de las subfunciones" , dentro
 
 fun1(5)
+
+valor de dentro en fun2  7
+valor de dentro en fun3 17
+valor dentro fuera de las subfunciones 50
+
 
 5-.
 
@@ -127,9 +139,46 @@ Main.java:20: error: cannot find symbol
 7-.
 
 
-Hello world!
+
+void crea_listaEst(){
+	int listest[100000];
+}
+
+void crea_listaDyn(){
+	int* listDyn = new int [100000];
+}
+
+int main() {
+	
+	for(int i = 0; i < 100000; i++){
+		crea_listaEst();
+		
+	}
+	return 0;
+}
+
+// En Stack no existe problema ya que es variable estatica, al momento de compilar, el compilador sabe cuanta pedir al SO para hacer la reserva 
+
+
+int main() {
+	
+	for(int i = 0; i < 100000; i++){
+		crea_listaDyn();
+		
+	}
+	return 0;
+}
+
+
+
+
 terminate called after throwing an instance of 'std::bad_alloc'
   what():  std::bad_alloc
 
 std::bad_alloc es una excepcion que indica que nos quedamos sin memoria
+
+// Esto error sucede porque estamos pidiendo mas memoria de la que tenemos,al ser una variable dinamica se almacena en el Heap,
+ lo que sucede es que el compilador le pide al SO que de memoria para almacenar pero no liberamos memoria, si bien la memoria en Heap puede crecer tiene un tamaño limitado,
+ una solucion seria apenas dejemos de usar la variable dinamica,
+ eliminarla de memoria para liberarla
 
